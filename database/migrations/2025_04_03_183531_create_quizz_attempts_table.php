@@ -22,8 +22,8 @@ return new class extends Migration
                 'completed',
                 'timed_out'
             ])->default('in_progress');
-            $table->date('start_time')->nullable();
-            $table->date('end_time')->nullable();
+            $table->timestamp('start_time')->nullable();
+            $table->timestamp('end_time')->nullable();
             $table->integer('time_spend_seconds')->nullable();
             $table->boolean('is_passed')->default(false);
             $table->softDeletes();

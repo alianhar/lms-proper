@@ -21,7 +21,7 @@ return new class extends Migration
                 'in_progress',
                 'completed'
             ])->default('not_started');
-            $table->date('completed_at')->nullable();
+            $table->timestamp('completed_at')->nullable();
             $table->integer('time_spent')->default(0);
             $table->integer('last_positon')->default(0);
             $table->softDeletes();
