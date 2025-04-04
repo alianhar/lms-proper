@@ -23,7 +23,9 @@ return new class extends Migration
                 'assignment'
             ]);
             $table->integer('order_index')->default(0);
+            $table->softDeletes();
             $table->timestamps();
+            $table->index('module_id');
         });
     }
 

@@ -16,6 +16,24 @@ return new class extends Migration
             $table->foreignId('lesson_id')->constrained('lessons')->onDelete('cascade');
             $table->longText('content_text');
             $table->longText('content_html')->nullable();
+            $table->enum('media_type', [
+                'pdf',
+                'video',
+                'ppt',
+                'image',
+                'audio',
+                'other'
+            ]);
+            $table->string('thumbnail')->nullable();
+            $table->string('file_path')->nullable();
+            $table->integer('duration_seconds')->nullable();
+            $table->string('external_url')->nullable();
+            $table->enum('provider',[
+                'youtube',
+                'local',
+                'google_slides',
+                'other'
+            ])->default('local');
             $table->timestamps();
             $table->softDeletes();
             $table->index('lesson_id');

@@ -30,18 +30,13 @@ return new class extends Migration
             $table->boolean('is_featured')->default(false);
             $table->text('prerequisites')->nullable();
             $table->text('what_you_will_learn')->nullable();
-            $table->integer('duration_in_minutes')->nullable();
-
+            $table->integer('duration_in_minutes')->default(0);
             $table->enum('course_type', [
                 'self_paced',
                 'online',
                 'offline'
             ]);
-
             $table->integer('access_duration')->nullable();
-            // $table->string('location')->nullable();
-            // $table->string('meeting_platform', 50)->nullable();
-            // $table->string('meeting_link')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

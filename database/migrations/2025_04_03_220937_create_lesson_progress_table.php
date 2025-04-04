@@ -15,7 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('enrollment_id')->constrained('enrollments')->onDelete('cascade');
             $table->foreignId('lesson_id')->constrained('lessons')->onDelete('cascade');
-            $table->enum('status', ['not_started','in_progress','completed'])->default('not_started');
+
+            $table->enum('status', [
+                'not_started',
+                'in_progress',
+                'completed'
+            ])->default('not_started');
             $table->date('completed_at')->nullable();
             $table->integer('time_spent')->default(0);
             $table->integer('last_positon')->default(0);

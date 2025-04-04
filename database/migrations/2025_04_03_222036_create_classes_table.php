@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
             $table->foreignId('class_type_id')->constrained('class_types')->onDelete('cascade');
+
             $table->string('title');
             $table->text('description')->nullable();
             $table->integer('capacity')->default(0);
@@ -25,6 +26,9 @@ return new class extends Migration
                 'active',
                 'completed'
             ])->default('upcoming');
+            $table->text('location')->nullable();
+            $table->string('meeting_platform')->nullable();
+            $table->string('meeting_link')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->index('course_id');

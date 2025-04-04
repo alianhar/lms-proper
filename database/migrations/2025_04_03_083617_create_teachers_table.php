@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('education')->nullable();
             $table->integer('years_experience')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+            $table->index('profile_id');
         });
     }
 

@@ -11,21 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('notifications', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->string('name')->unique();
-            $table->string('profile_picture');
-            $table->string('phone_number')->unique();
-            $table->text('address')->nullable();
-            $table->enum('gender', [
-                'male',
-                'female'
-            ]);
-            $table->date('DOB');
-            $table->text('bio');
-            $table->timestamps();
+            $table->string('title');
+            $table->text('message')->nullable();
+            $table->string('type')->nullable();
+            $table->boolean('is_read')->default(false);
+            $table->string('link')->nullable();
             $table->softDeletes();
+            $table->timestamps();
             $table->index('user_id');
         });
     }
@@ -35,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('notifications');
     }
 };

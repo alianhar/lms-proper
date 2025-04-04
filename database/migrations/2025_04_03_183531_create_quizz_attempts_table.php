@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('quizz_id')->constrained('quizzs')->onDelete('cascade');
             $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
             $table->foreignId('enrollment_id')->constrained('enrollments')->onDelete('cascade');
-            $table->decimal(5,2)->default(0);
+            $table->decimal('score',5,2)->default(0);
             $table->enum('status',[
                 'in_progress',
                 'completed',

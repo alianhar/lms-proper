@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('assignment_id')->constrained('assignments')->onDelete('cascade');
             $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
             $table->foreignId('enrollment_id')->constrained('enrollments')->onDelete('cascade');
+
             $table->text('submission_text')->nullable();
             $table->string('file_path')->nullable();
             $table->string('submission_url')->nullable();
@@ -28,8 +29,8 @@ return new class extends Migration
                 'graded',
                 'returned_for_revision'
             ])->default('submitted');
-            $table->foreignId('graded_by')->constrained('teachers')->onDelete('cascade');
-            $table->date('graded_at');
+            $table->foreignId('graded_by')->constrained('teachers')->nullable();
+            $table->date('graded_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
 

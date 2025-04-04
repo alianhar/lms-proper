@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\LessonMedia;
-use App\Http\Requests\StoreLessonMediaRequest;
-use App\Http\Requests\UpdateLessonMediaRequest;
+use App\Models\ClassAttendance;
+use App\Http\Requests\StoreClassAttendanceRequest;
+use App\Http\Requests\UpdateClassAttendanceRequest;
 
-class LessonMediaController extends Controller
+class ClassAttendanceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class LessonMediaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLessonMediaRequest $request)
+    public function store(StoreClassAttendanceRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class LessonMediaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(LessonMedia $lessonMedia)
+    public function show(ClassAttendance $classAttendance)
     {
         //
     }
@@ -43,7 +43,7 @@ class LessonMediaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(LessonMedia $lessonMedia)
+    public function edit(ClassAttendance $classAttendance)
     {
         //
     }
@@ -51,7 +51,7 @@ class LessonMediaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateLessonMediaRequest $request, LessonMedia $lessonMedia)
+    public function update(UpdateClassAttendanceRequest $request, ClassAttendance $classAttendance)
     {
         //
     }
@@ -59,7 +59,7 @@ class LessonMediaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(LessonMedia $lessonMedia)
+    public function destroy(ClassAttendance $classAttendance)
     {
         //
     }

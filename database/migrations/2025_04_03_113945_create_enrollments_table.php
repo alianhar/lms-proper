@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
             $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
+            $table->foreignId('class_id')->nullable()->constrained('classes')->onDelete('set null');
+
             $table->dateTime('enrollment_date')->nullable();
             $table->enum('enrollment_type', [
                 'self_paced',
@@ -32,11 +34,13 @@ return new class extends Migration
                 'paid',
                 'rejected'
             ])->default('pending');
-            $table->string('payment_proof')->nullable();
             $table->decimal('completion_percentage', 5, 2)->default(0);
             $table->dateTime('expiry_date')->nullable();
             $table->timestamps();
             $table->softDeletes();
+            $table->index('student_id');
+            $table->index('class_id');
+            $table->index('course_id');
         });
     }
 
