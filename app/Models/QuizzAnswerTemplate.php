@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class QuizzEssayAnswer extends Model
+class QuizzAnswerTemplate extends Model
 {
-    /** @use HasFactory<\Database\Factories\QuizzEssayAnswerFactory> */
+    /** @use HasFactory<\Database\Factories\QuizzAnswerTemplateFactory> */
     use HasFactory;
 }

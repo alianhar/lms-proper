@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\QuizzEssayAnswer;
-use App\Http\Requests\StoreQuizzEssayAnswerRequest;
-use App\Http\Requests\UpdateQuizzEssayAnswerRequest;
+use App\Models\QuizzAnswerTemplate;
+use App\Http\Requests\StoreQuizzAnswerTemplateRequest;
+use App\Http\Requests\UpdateQuizzAnswerTemplateRequest;
 
-class QuizzEssayAnswerController extends Controller
+class QuizzAnswerTemplateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class QuizzEssayAnswerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreQuizzEssayAnswerRequest $request)
+    public function store(StoreQuizzAnswerTemplateRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class QuizzEssayAnswerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(QuizzEssayAnswer $quizzEssayAnswer)
+    public function show(QuizzAnswerTemplate $quizzAnswerTemplate)
     {
         //
     }
@@ -43,7 +43,7 @@ class QuizzEssayAnswerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(QuizzEssayAnswer $quizzEssayAnswer)
+    public function edit(QuizzAnswerTemplate $quizzAnswerTemplate)
     {
         //
     }
@@ -51,7 +51,7 @@ class QuizzEssayAnswerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateQuizzEssayAnswerRequest $request, QuizzEssayAnswer $quizzEssayAnswer)
+    public function update(UpdateQuizzAnswerTemplateRequest $request, QuizzAnswerTemplate $quizzAnswerTemplate)
     {
         //
     }
@@ -59,7 +59,7 @@ class QuizzEssayAnswerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(QuizzEssayAnswer $quizzEssayAnswer)
+    public function destroy(QuizzAnswerTemplate $quizzAnswerTemplate)
     {
         //
     }
