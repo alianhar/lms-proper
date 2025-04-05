@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('class_sessions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('class_id')->constrained('classes')->onDelete('cascade');
-
+            $table->foreignId('teacher_id')->constrained('teachers')->onDelete('cascade');
             $table->string('title');
             $table->text('description')->nullable();
             $table->date('session_date');
-            $table->timestamp('start_time');
-            $table->timestamp('end_time');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
             $table->text('location')->nullable();
             $table->text('meeting_details')->nullable();
             $table->text('materials')->nullable();

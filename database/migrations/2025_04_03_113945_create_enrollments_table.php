@@ -18,11 +18,11 @@ return new class extends Migration
             $table->foreignId('class_id')->nullable()->constrained('classes')->onDelete('set null');
 
             $table->dateTime('enrollment_date')->nullable();
-            $table->enum('enrollment_type', [
-                'self_paced',
-                'online',
-                'offline'
-            ]);
+            // $table->enum('enrollment_type', [
+            //     'self_paced',
+            //     'online',
+            //     'offline'
+            // ]);
             $table->enum('status', [
                 'pending',
                 'active',
@@ -41,6 +41,7 @@ return new class extends Migration
             $table->index('student_id');
             $table->index('class_id');
             $table->index('course_id');
+            $table->index(['status', 'payment_status']);
         });
     }
 

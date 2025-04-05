@@ -42,6 +42,7 @@ return new class extends Migration
             $table->softDeletes();
             $table->index('category_id');
             $table->index('teacher_id');
+            $table->index(['is_published', 'is_featured']);
         });
     }
 
